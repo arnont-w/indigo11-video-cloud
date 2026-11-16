@@ -1,0 +1,23 @@
+{
+ "name": "",
+ "lang": "en",
+ "channels": {
+  "en": {
+   "name": "",
+   "handle": ""
+  }
+ },
+ "voice": "",
+ "colors": {
+  "primary": "",
+  "secondary": "",
+  "accent": "",
+  "text": "",
+  "background": ""
+ },
+ "fonts": [],
+ "logo": "",
+ "profile_photo": "",
+ "voices": {},
+ "voice_names": {}
+}

@@ -1,0 +1,23 @@
+# Keys never go into the repository. In the cloud they live in the environment settings.
+.env
+.env.*
+
+# Rebuilt on each machine by _system/cloud/setup.sh or the installer
+_system/setup/local.json
+node_modules/
+package-lock.json
+__pycache__/
+*.pyc
+
+# Videos never go to GitHub: raw clips and finished files live in Google Drive
+projects/raw-videos/*
+!projects/raw-videos/README.md
+projects/results/*
+!projects/results/README.txt
+projects/[0-9][0-9][0-9][0-9][0-9][0-9]-*/
+projects/INDEX.md
+
+# Working files and backups made by the skills (large, rebuilt when needed)
+projects/_work/*
+!projects/_work/.gitkeep
+!projects/_work/README.txt

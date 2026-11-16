@@ -1,0 +1,18 @@
+# HOW TO USE: copy this file to ".env" in the indigo11-video folder (the folder with CLAUDE.md).
+# Open .env in Notepad, paste your key right after the "=" (no spaces, no quotes), save, then type "check" in Claude.
+# Never share the .env file and never paste a key into a chat.
+
+# REQUIRED: ONE speech-to-text key (captions and transcription). ElevenLabs is best for Thai.
+ELEVENLABS_API_KEY=
+
+# OPTIONAL: only when you want these jobs. Each AI job costs money per use; Claude shows the price first.
+# AI images, AI B-roll video and generated music (one key covers all three):
+GEMINI_API_KEY=
+# AI images (alternative to Gemini); also speech-to-text, English only:
+OPENAI_API_KEY=
+# AI images (alternative to Gemini); also speech-to-text:
+XAI_API_KEY=
+
+# OPTIONAL and free: stock B-roll photos and clips
+PEXELS_API_KEY=
+PIXABAY_API_KEY=

@@ -1,0 +1,14 @@
+{
+  "note": "Roles only. No file is assigned: per CLAUDE.md, pick sounds that have a row in _system/sound-guide/SOUND-GUIDE.md.",
+  "tempo_bpm": 136,
+  "music": {"bed": "soft upbeat, ~136 BPM, ducked under voice", "duck_db": -8, "tail": "silence 1.0 s"},
+  "events": {
+    "pill_appears": {"role": "pop", "gain_db": -14},
+    "caption_word": {"role": "tick", "gain_db": -22, "optional": true},
+    "scene_change": {"role": "swish", "gain_db": -16},
+    "badge_or_check": {"role": "success", "gain_db": -14},
+    "cross_or_warning": {"role": "impact", "gain_db": -16},
+    "bars_or_curve_grow": {"role": "riser", "gain_db": -20, "optional": true}
+  },
+  "alignment": "hit at picture start of the element; scene hits within 0.2 s of the scene change"
+}

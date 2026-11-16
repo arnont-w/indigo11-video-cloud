@@ -1,0 +1,73 @@
+{
+  "id": "4BECFCAD-1AD4-42D2-8AB7-E3CC04F2508A",
+  "source_timerange": {
+    "start": 0,
+    "duration": 2500000
+  },
+  "target_timerange": {
+    "start": 1700000,
+    "duration": 2500000
+  },
+  "render_timerange": {
+    "start": 0,
+    "duration": 0
+  },
+  "desc": "",
+  "state": 0,
+  "speed": 1.0,
+  "is_loop": false,
+  "is_tone_modify": false,
+  "reverse": false,
+  "intensifies_audio": false,
+  "cartoon": false,
+  "volume": 1.0,
+  "last_nonzero_volume": 1.0,
+  "clip": null,
+  "uniform_scale": null,
+  "material_id": "5C890CFC-52EE-4D89-9ECF-239D0F226D33",
+  "extra_material_refs": [
+    "6A55DB3B-6CC2-42F0-86D0-2221C78DA3E6",
+    "870A5547-EAA3-4D72-815F-7A5D30305B9A",
+    "A62835C4-8169-4742-A2A2-38799A8282CE",
+    "C82866B6-6434-48F2-94D7-A1004AE5C498",
+    "27AB1509-73F8-4FE5-9542-3A2BE168D1DB"
+  ],
+  "render_index": 0,
+  "keyframe_refs": [],
+  "enable_lut": false,
+  "enable_adjust": false,
+  "enable_hsl": false,
+  "visible": true,
+  "group_id": "",
+  "enable_color_curves": true,
+  "enable_hsl_curves": true,
+  "track_render_index": 2,
+  "hdr_settings": null,
+  "enable_color_wheels": true,
+  "track_attribute": 0,
+  "is_placeholder": false,
+  "template_id": "",
+  "enable_smart_color_adjust": false,
+  "template_scene": "default",
+  "common_keyframes": [],
+  "caption_info": null,
+  "responsive_layout": {
+    "enable": false,
+    "target_follow": "",
+    "size_layout": 0,
+    "horizontal_pos_layout": 0,
+    "vertical_pos_layout": 0
+  },
+  "enable_color_match_adjust": false,
+  "enable_color_correct_adjust": false,
+  "enable_adjust_mask": false,
+  "raw_segment_id": "",
+  "lyric_keyframes": null,
+  "enable_video_mask": true,
+  "digital_human_template_group_id": "",
+  "color_correct_alg_result": "",
+  "source": "segmentsourcenormal",
+  "enable_mask_stroke": false,
+  "enable_mask_shadow": false,
+  "enable_color_adjust_pro": false
+}

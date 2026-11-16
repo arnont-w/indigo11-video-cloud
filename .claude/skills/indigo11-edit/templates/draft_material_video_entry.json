@@ -1,0 +1,25 @@
+{
+  "ai_group_type": "",
+  "create_time": 1778865142,
+  "duration": 3200000,
+  "enter_from": 0,
+  "extra_info": "IMG_1766.MOV",
+  "file_Path": "/Users/<you>/Desktop/test-vid/IMG_1766.MOV",
+  "height": 3840,
+  "id": "bb10c843-4bc0-4ac6-abfc-93d0845b8c55",
+  "import_time": 1778981651,
+  "import_time_ms": 1778981650318835,
+  "item_source": 1,
+  "md5": "",
+  "metetype": "video",
+  "roughcut_time_range": {
+    "duration": 3200000,
+    "start": 0
+  },
+  "sub_time_range": {
+    "duration": -1,
+    "start": -1
+  },
+  "type": 0,
+  "width": 2160
+}

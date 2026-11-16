@@ -1,0 +1,168 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(../../../assets/fonts/Prompt/Prompt-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(../../../assets/fonts/Prompt/Prompt-ExtraBold.ttf);font-weight:800}
+@font-face{font-family:P;src:url(../../../assets/fonts/Prompt/Prompt-Regular.ttf);font-weight:400}
+:root{--bg:#F5EFE6;--ink:#111;--y:#FFC93C;--t:#1AA390;--p:#6C4CE0;--r:#FF4B2B;--n:#1F2750}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:P,sans-serif}
+#f{position:relative;width:1080px;height:1920px;
+ background:
+  linear-gradient(115deg,transparent 10%,rgba(190,180,225,.28) 18%,transparent 26%,transparent 52%,rgba(190,225,205,.30) 60%,transparent 70%),
+  radial-gradient(circle at 20% 90%,rgba(190,225,205,.35),transparent 40%),var(--bg)}
+.c{position:absolute;border-radius:3px}
+.pill{position:absolute;left:50%;transform:translateX(-50%);padding:14px 40px;border:5px solid var(--ink);border-radius:60px;font-weight:800;font-size:52px;color:#fff;white-space:nowrap}
+.y{background:var(--y);color:var(--ink)}.t{background:var(--t)}.p{background:var(--p)}.r{background:var(--r)}.n{background:var(--n)}
+.kw{position:absolute;left:0;right:0;text-align:center;font-weight:800;font-size:76px;color:var(--ink)}
+.hl{background:var(--y);padding:0 12px}
+.cite{position:absolute;left:0;right:0;text-align:center;font-size:27px;color:#5a5448;font-weight:400}
+.cap{position:absolute;left:60px;right:60px;text-align:center;font-weight:800;font-size:66px;line-height:1.25;color:#fff;
+ -webkit-text-stroke:11px #000;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.25)}
+.cap b{background:var(--y);color:#fff;font-weight:800;padding:0 10px;-webkit-text-stroke:11px #000;border-radius:8px}
+svg{position:absolute;left:50%;transform:translateX(-50%)}
+.ch{position:absolute;padding:16px 36px;border:5px solid var(--ink);border-radius:60px;font-weight:800;font-size:46px;color:#fff;white-space:nowrap}
+</style></head><body><div id="f"></div>
+<script>
+const F=document.getElementById('f');
+let s=7;const rnd=()=>(s=(s*16807)%2147483647)/2147483647;
+let cur=null;
+const add=h=>{if(h.includes('class="cap"'))return;const w=document.createElement('div');w.innerHTML=h.trim();cur.appendChild(w.firstElementChild)};
+const brain=(x,y,w,extra='')=>`<svg style="left:${x}px;top:${y}px" width="${w}" height="${w*.8}" viewBox="0 0 400 320">
+<path d="M200 40 C150 10 80 30 70 90 C20 100 10 170 50 200 C30 250 80 300 140 280 C170 310 230 310 260 280 C320 300 380 250 350 200 C390 170 380 100 330 90 C320 30 250 10 200 40Z" fill="#F7B7C8" stroke="#111" stroke-width="10" stroke-linejoin="round"/>
+<path d="M200 45 C190 120 215 190 200 285" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+<path d="M110 100 C140 120 150 150 120 175 M290 100 C260 120 250 150 280 175 M100 220 C130 230 150 250 140 270 M300 220 C270 230 250 250 260 270" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>${extra}</svg>`;
+function buildScene(n){
+if(n=='hook'){
+ add(`<div class="pill y" style="top:100px">Brain + insulin</div>`);
+ add(brain(470,300,600));
+ // receptor key + lock motif
+ add(`<svg style="left:900px;top:330px" width="190" height="150" viewBox="0 0 190 150"><circle cx="45" cy="75" r="34" fill="#FFC93C" stroke="#111" stroke-width="8"/><rect x="75" y="66" width="100" height="18" rx="6" fill="#FFC93C" stroke="#111" stroke-width="8"/><rect x="132" y="84" width="14" height="30" fill="#FFC93C" stroke="#111" stroke-width="7"/><rect x="156" y="84" width="14" height="22" fill="#FFC93C" stroke="#111" stroke-width="7"/></svg>`);
+ add(`<div class="pill r" style="top:880px">Still listening?</div>`);
+ add(`<div class="cite" style="top:1190px">Porte et al., Diabetes 2005</div>`);
+ add(`<div class="cap" style="top:1290px">Your brain has <b>insulin</b> receptors</div>`);
+}
+if(n=='mechanism'){
+ add(`<div class="pill y" style="top:100px">Brain fuel</div>`);
+ add(`<div class="ch p" style="left:330px;top:290px">Insulin resistance</div>`);
+ add(`<svg style="left:540px;top:400px" width="40" height="110" viewBox="0 0 40 110"><path d="M20 0V90M5 72L20 100L35 72" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>`);
+ add(`<div class="ch p" style="left:352px;top:540px">Less glucose in</div>`);
+ add(`<svg style="left:540px;top:650px" width="40" height="110" viewBox="0 0 40 110"><path d="M20 0V90M5 72L20 100L35 72" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>`);
+ add(`<div class="ch r" style="left:352px;top:790px">Brain runs low</div>`);
+ add(`<div class="kw" style="top:1010px;font-size:70px">Glucose <span class="hl">hypometabolism</span></div>`);
+ add(`<div class="cite" style="top:1190px">Mosconi et al., Eur J Nucl Med Mol Imaging 2009</div>`);
+ add(`<div class="cap" style="top:1290px">When the brain becomes insulin resistant, <b>fuel</b> falters</div>`);
+}
+if(n=='evidence'){
+ add(`<div class="pill p" style="top:100px">Finnish study</div>`);
+ add(brain(540,260,480));
+ add(`<div class="ch" style="left:150px;top:690px;background:#8d8a82;font-size:44px">Age   p = 0.005</div>`);
+ add(`<div class="ch t" style="left:150px;top:830px;font-size:44px">Fasting insulin   p = 0.0005</div>`);
+ add(`<svg style="left:880px;top:826px" width="92" height="92" viewBox="0 0 92 92"><circle cx="46" cy="46" r="40" fill="#2DBE60" stroke="#111" stroke-width="7"/><path d="M26 48L41 62L68 32" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>`);
+ add(`<div class="kw" style="top:1020px;font-size:64px">Smaller p = <span class="hl">stronger link</span></div>`);
+ add(`<div class="cite" style="top:1190px">Kuusisto et al., BMJ 1997</div>`);
+ add(`<div class="cap" style="top:1290px">Fasting insulin was <b>more strongly linked</b> than age</div>`);
+}
+if(n=='cta'){
+ add(`<svg style="left:540px;top:150px" width="190" height="190" viewBox="0 0 190 190"><circle cx="95" cy="95" r="86" fill="#fff" stroke="#111" stroke-width="9"/><path d="M80 45h30v35h35v30h-35v35H80v-35H45V80h35z" fill="#FF4B2B" stroke="#111" stroke-width="8" stroke-linejoin="round"/></svg>`);
+ add(`<div class="kw" style="top:380px;font-size:66px">Education only</div>`);
+ add(`<div class="pill r" style="top:520px;font-size:44px">Not medical advice</div>`);
+ add(`<div class="kw" style="top:690px;font-size:58px"><span class="hl">Protect insulin sensitivity</span></div>`);
+ add(`<div class="kw" style="top:800px;font-size:50px">Your product name</div>`);
+ add(`<div class="cite" style="top:880px;font-size:26px">Information for education, not a medical recommendation</div>`);
+ add(`<div class="pill t" style="top:960px;font-size:40px;padding:10px 34px">+ Follow</div>`);
+ add(`<div class="cap" style="top:1290px">Protect your insulin sensitivity, protect your <b>brain</b></div>`);
+}
+
+const tick=(x,y)=>`<svg style="left:${x}px;top:${y}px" width="80" height="80" viewBox="0 0 92 92"><circle cx="46" cy="46" r="40" fill="#2DBE60" stroke="#111" stroke-width="7"/><path d="M26 48L41 62L68 32" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const cross=(x,y)=>`<svg style="left:${x}px;top:${y}px" width="80" height="80" viewBox="0 0 92 92"><circle cx="46" cy="46" r="40" fill="#FF4B2B" stroke="#111" stroke-width="7"/><path d="M30 30L62 62M62 30L30 62" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/></svg>`;
+const C='left:50%;transform:translateX(-50%)';
+if(n=='view'){
+ add(`<div class="pill y" style="top:100px">Brain + insulin</div>`);
+ add(`<div class="ch" style="${C};top:300px;background:#8d8a82;text-decoration:line-through;text-decoration-thickness:6px">Old view: ignores insulin</div>`);
+ add(`<div class="ch t" style="${C};top:430px">New view: listens closely</div>`);
+ add(tick(860,415));
+ add(brain(540,600,520));
+ add(`<div class="kw" style="top:1060px;font-size:70px">The brain <span class="hl">listens</span></div>`);
+ add(`<div class="cite" style="top:1190px">Porte et al., Diabetes 2005</div>`);
+ add(`<div class="cap" style="top:1290px">We now know it <b>listens</b> closely</div>`);
+}
+if(n=='fuel'){
+ add(`<div class="pill t" style="top:100px">Brain fuel</div>`);
+ add(brain(560,260,480));
+ const dots=[[110,380],[210,330],[170,470],[290,420],[110,560],[250,560]];
+ dots.forEach(d=>add(`<svg style="left:${d[0]}px;top:${d[1]}px;transform:none" width="70" height="70" viewBox="0 0 70 70"><circle cx="35" cy="35" r="28" fill="#FFC93C" stroke="#111" stroke-width="7"/></svg>`));
+ add(`<svg style="left:360px;top:430px;transform:none" width="110" height="60" viewBox="0 0 110 60"><path d="M5 30H90M68 10L95 30L68 50" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>`);
+ add(`<div class="kw" style="top:850px;font-size:52px">Insulin helps cells <span class="hl">take up glucose</span></div>`);
+ add(`<div class="ch p" style="${C};top:1010px;font-size:42px">Learning + memory</div>`);
+ add(`<div class="cite" style="top:1190px">Bingham et al., Diabetes 2002; Zhao and Alkon 2001</div>`);
+ add(`<div class="cap" style="top:1290px">Insulin helps brain cells take up <b>glucose</b></div>`);
+}
+if(n=='tau'){
+ add(`<div class="pill p" style="top:100px">Amyloid + tau</div>`);
+ add(brain(540,260,480));
+ [[420,380],[470,330],[560,360],[640,420],[600,500],[480,480]].forEach(d=>add(`<svg style="left:${d[0]}px;top:${d[1]}px;transform:none" width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="17" fill="#6C4CE0" stroke="#111" stroke-width="6"/></svg>`));
+ add(`<svg style="left:690px;top:330px;transform:none" width="120" height="90" viewBox="0 0 120 90"><path d="M8 70C30 10 50 90 70 30C85 -5 100 60 112 20" fill="none" stroke="#FF4B2B" stroke-width="10" stroke-linecap="round"/></svg>`);
+ add(`<div class="ch p" style="${C};top:780px;font-size:42px">Amyloid plaques</div>`);
+ add(`<div class="ch r" style="${C};top:910px;font-size:42px">Tau tangles</div>`);
+ add(`<div class="kw" style="top:1050px;font-size:50px">Insulin resistance <span class="hl">may nudge</span> both</div>`);
+ add(`<div class="cite" style="top:1190px">Watson et al., Neurology 2003; Hong and Lee 1997</div>`);
+ add(`<div class="cap" style="top:1290px">It seems to nudge <b>amyloid</b> and <b>tau</b></div>`);
+}
+if(n=='careful'){
+ add(`<div class="pill n" style="top:100px">Careful</div>`);
+ add(`<svg style="left:540px;top:250px" width="320" height="320" viewBox="0 0 320 320"><circle cx="130" cy="130" r="100" fill="#fff" fill-opacity=".6" stroke="#111" stroke-width="12"/><path d="M205 205L290 290" stroke="#111" stroke-width="26" stroke-linecap="round"/><path d="M205 205L290 290" stroke="#FFC93C" stroke-width="10" stroke-linecap="round"/></svg>`);
+ add(`<div class="ch t" style="left:230px;top:660px">Linked</div>`);
+ add(tick(660,645));
+ add(`<div class="ch" style="left:230px;top:800px;background:#8d8a82">Proven cause</div>`);
+ add(cross(740,785));
+ add(`<div class="kw" style="top:990px;font-size:72px">Association, <span class="hl">not proof</span></div>`);
+ add(`<div class="cite" style="top:1190px">Zolochevska et al., J Alzheimers Dis 2018</div>`);
+ add(`<div class="cap" style="top:1290px">This is association, <b>not proof</b></div>`);
+}
+if(n=='takeaway'){
+ add(`<div class="pill t" style="top:100px">Takeaway</div>`);
+ add(brain(540,260,520));
+ add(tick(780,230));
+ add(`<div class="kw" style="top:760px;font-size:72px">Protect <span class="hl">insulin sensitivity</span></div>`);
+ add(`<div class="kw" style="top:880px;font-size:60px">and you may protect your brain</div>`);
+ add(`<div class="cap" style="top:1290px">Protect your insulin sensitivity, protect your <b>brain</b></div>`);
+}
+}
+</script>
+<script src="timing.js"></script>
+<script>
+// confetti (drifts with time)
+const cols=['#8fd3bd','#b7a6ee','#f3d46b'];const conf=[];
+for(let i=0;i<46;i++){const d=document.createElement('div');d.className='c';
+ const o={d,x:rnd()*1080,y:rnd()*1920,v:12+rnd()*22,r:rnd()*180,w:14+rnd()*14};
+ d.style.cssText+=`width:${o.w}px;height:${6+rnd()*4}px;background:${cols[i%3]};opacity:.75`;F.appendChild(d);conf.push(o)}
+const scenes=[];
+T.names.forEach(n=>{const c=document.createElement('div');c.style.cssText='position:absolute;inset:0;opacity:0';F.appendChild(c);cur=c;buildScene(n);
+ const els=[...c.children].map((e,k)=>({e,k,cite:e.classList.contains('cite'),brain:e.innerHTML.includes('F7B7C8'),dot:e.dataset&&false}));scenes.push({c,els,n})});
+const clamp=x=>Math.max(0,Math.min(1,x));
+const back=p=>{const q=p-1;return 1+2.70158*q*q*q+1.70158*q*q};
+function render(t){
+ F.style.backgroundPosition=`${Math.sin(t*0.4)*60}px 0, 0 0, 0 0`;
+ conf.forEach(o=>{const y=(o.y+t*o.v)%2000-40;o.d.style.left=(o.x+Math.sin(t*0.8+o.r)*18)+'px';o.d.style.top=y+'px';o.d.style.transform=`rotate(${o.r+t*25}deg)`});
+ let si=0;for(let i=0;i<T.sc.length;i++)if(t>=T.sc[i])si=i;
+ const s0=T.sc[si],s1=si+1<T.sc.length?T.sc[si+1]:T.total,lt=t-s0;
+ scenes.forEach((S,i)=>{
+  if(i!==si){S.c.style.opacity=0;return}
+  S.c.style.opacity=Math.min(clamp(lt/0.25),clamp((s1-t)/0.25));
+  S.els.forEach(o=>{
+   const t0=0.12+o.k*0.3,p=clamp((lt-t0)/0.4);
+   let sc=1,ty=0,op=clamp(p*3),rot=0;
+   if(o.cite){ty=0}else{const b=back(p);sc=0.55+0.45*b;ty=(1-clamp(p))*24}
+   if(o.brain){const ph=lt+o.k;ty+=Math.sin(ph*2.2)*9;sc*=1+0.018*Math.sin(ph*4.4);rot=Math.sin(ph*1.4)*1.5}
+   const isKey=o.e.innerHTML.includes('rx="6"');if(isKey){rot=Math.sin(lt*5)*8}
+   const isMag=o.e.innerHTML.includes('r="100"');if(isMag){ty+=Math.sin(lt*2)*14;rot=Math.sin(lt*2)*6}
+   o.e.style.opacity=op;o.e.style.translate=`0 ${ty}px`;o.e.style.scale=sc;o.e.style.rotate=rot+'deg';
+  });
+  // glucose dots flow into the brain (fuel scene)
+  if(S.n==='fuel'){let k=0;S.els.forEach(o=>{if(o.e.innerHTML.includes('r="28"')){const q=((lt*0.45+k/6)%1);o.e.style.translate=`${q*260}px ${(1-q)*0+Math.sin(lt*3+k)*6}px`;o.e.style.opacity=clamp(lt-0.5)*(q<0.85?1:(1-q)/0.15);o.e.style.scale=1;k++}})}
+  if(S.n==='tau'){let k=0;S.els.forEach(o=>{if(o.e.innerHTML.includes('#6C4CE0')&&o.e.getAttribute('width')==='44'){o.e.style.scale=1+0.25*Math.sin(lt*4+k*1.3);k++}})}
+ });
+}
+window.render=render;window.ready=true;
+</script></body></html>

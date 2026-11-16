@@ -1,0 +1,77 @@
+{
+  "material_animations": [
+    {
+      "id": "BAE1B1C5-161B-4538-88D2-E0A5C60EAD84",
+      "type": "sticker_animation",
+      "animations": [],
+      "multi_language_current": "none"
+    }
+  ],
+  "speeds": [
+    {
+      "id": "199A4821-566C-4CF5-A6AE-5F56E2B9509B",
+      "type": "speed",
+      "mode": 0,
+      "speed": 1.0,
+      "curve_speed": null
+    }
+  ],
+  "placeholder_infos": [
+    {
+      "id": "C3A71DDF-051C-4109-BD10-1AAD13751CCD",
+      "type": "placeholder_info",
+      "meta_type": "none",
+      "res_path": "",
+      "res_text": "",
+      "error_path": "",
+      "error_text": ""
+    }
+  ],
+  "canvases": [
+    {
+      "id": "79D76986-03A7-4BAC-94FD-CAE105F2A12D",
+      "type": "canvas_color",
+      "color": "",
+      "blur": 0.0,
+      "image": "",
+      "album_image": "",
+      "image_id": "",
+      "image_name": "",
+      "source_platform": 0,
+      "team_id": ""
+    }
+  ],
+  "sound_channel_mappings": [
+    {
+      "id": "2FF1C4E8-5720-413C-A61D-CD68C27BD548",
+      "type": "none",
+      "audio_channel_mapping": 0,
+      "is_config_open": false
+    }
+  ],
+  "material_colors": [
+    {
+      "id": "ACB05994-7137-4061-AB97-88298F5B819A",
+      "is_color_clip": false,
+      "is_gradient": false,
+      "solid_color": "",
+      "gradient_colors": [],
+      "gradient_percents": [],
+      "gradient_angle": 90.0,
+      "width": 0.0,
+      "height": 0.0
+    }
+  ],
+  "vocal_separations": [
+    {
+      "id": "97B555D9-6BEB-4F50-B693-FEABF3F63100",
+      "type": "vocal_separation",
+      "choice": 0,
+      "removed_sounds": [],
+      "time_range": null,
+      "production_path": "",
+      "final_algorithm": "",
+      "enter_from": ""
+    }
+  ]
+}

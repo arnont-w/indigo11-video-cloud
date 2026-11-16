@@ -1,0 +1,21 @@
+CLOUD QUICK START
+For a phone, a tablet or any browser. No computer needed.
+
+You need: a paid Claude plan (Pro or Max), free GitHub and Google Drive accounts, and an ElevenLabs key.
+
+ONCE
+1. On GitHub, open the pack link. Tap "Use this template", then "Create a new repository". Choose Private.
+2. Open claude.ai/code and connect GitHub.
+3. In the environment settings:
+   - Network access: Limited. Paste the domain list from CLOUD-README.txt.
+   - Environment variables: ELEVENLABS_API_KEY=your-key
+   Never paste a key into the chat.
+4. Choose your repository and this environment, then type: start
+
+EVERY VIDEO
+5. Upload your raw clip to Google Drive. Share it as "Anyone with the link". Paste the link to Claude and say what you want. No clip? Just name a topic.
+6. Claude gives you a link to the finished video. Tap it, then tap download. Do it soon: GitHub space is limited.
+7. Delete the raw clip from Drive afterwards.
+
+Not in the cloud: editing inside CapCut.
+Details and help: CLOUD-README.txt

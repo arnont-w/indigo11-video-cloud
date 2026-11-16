@@ -1,0 +1,59 @@
+{
+  "name": "evidence-explainer",
+  "source": "a Thai health reel studied with indigo11-watch (source file not included)",
+  "status": "estimated from 6 fps grids; verify easing with strip.py/track.py before frame-locking",
+  "format": {"w": 1080, "h": 1920, "fps": 30, "length_s": 60, "scenes": 15},
+  "palette": {
+    "bg": "#F5EFE6",
+    "bg_streaks": ["#E4E9E0", "#F0E9E7", "#EDE9E5"],
+    "ink": "#111111",
+    "yellow_subject": "#FFC93C",
+    "teal_good": "#1AA390",
+    "purple_study": "#6C4CE0",
+    "red_risk": "#FF4B2B",
+    "navy_night": "#1F2750",
+    "note": "accents are visual estimates"
+  },
+  "fonts": {
+    "display": "rounded bold Thai sans (use assets/fonts: Prompt or Kanit, weight 700-800)",
+    "pill": "same, white text on coloured pill, 2-3px black outline",
+    "citation": "same family, light, ~14px, 60% grey",
+    "caption": "bold white, 4px black outline + soft shadow, bottom third, 2-4 words per phrase, wrap at ~18 Thai chars",
+    "numerals": "Thai numerals in visuals"
+  },
+  "texture": {
+    "paper_grain": true,
+    "dot_grid": "very faint",
+    "diagonal_streaks": "pale lilac/mint, slow drift",
+    "confetti": {"colors": ["mint", "lilac", "yellow"], "size_px": [3, 6], "shape": "rotated bars", "motion": "slow drift, deterministic in t"},
+    "line": "3-4px black outline, rounded caps",
+    "shading": "flat, one drop colour, no gradients"
+  },
+  "layout": {
+    "pill_label_y": 0.05,
+    "illustration_y": [0.1, 0.5],
+    "keyword_line_y": 0.52,
+    "citation_y": 0.62,
+    "caption_y": 0.66,
+    "note": "from first scene the pill sits at the top and the illustration drops below it; later scenes anchor the stack to the upper half"
+  },
+  "motion": {
+    "scene_in": {"pill": "scale+fade 6-8f ease-out", "illustration": "3-5f after pill", "caption": "word-by-word, ~3f fade + small rise"},
+    "scene_out": "all fade ~6f through empty cream, then next scene",
+    "bars_grow_s": 0.5,
+    "badge_pop": "overshoot 3-4f, 0.3s after bars",
+    "dot_grid_fill_s": 1.2,
+    "curve_draw_s": 3.0,
+    "clock_hand_s_per_turn": 2.0,
+    "spring_guess": {"omega": 18, "zeta": 0.6, "note": "estimate; measure with track.py"},
+    "camera": "none"
+  },
+  "transitions": ["fade-through-bg"],
+  "pacing": {
+    "scene_len_s": {"min": 2.0, "median": 3.5, "max": 6.5},
+    "new_element_every_s": 0.8,
+    "picture_lead_over_speech_s": [0.2, 0.5],
+    "silence_tail_s": 1.0
+  },
+  "color_semantics": {"yellow": "the subject", "teal": "good / supported", "red": "risk / warning / outcome", "purple": "study type or mechanism step", "navy": "night"}
+}

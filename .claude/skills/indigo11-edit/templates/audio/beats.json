@@ -1,0 +1,20 @@
+{
+  "id": "A62835C4-8169-4742-A2A2-38799A8282CE",
+  "type": "beats",
+  "enable_ai_beats": false,
+  "gear": 404,
+  "gear_count": 0,
+  "mode": 404,
+  "user_beats": [],
+  "user_delete_ai_beats": null,
+  "ai_beats": {
+    "melody_url": "",
+    "melody_path": "",
+    "beats_url": "",
+    "beats_path": "",
+    "melody_percents": [
+      0.0
+    ],
+    "beat_speed_infos": []
+  }
+}
